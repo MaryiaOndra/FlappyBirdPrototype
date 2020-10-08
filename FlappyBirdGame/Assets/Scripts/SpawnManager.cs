@@ -2,16 +2,16 @@
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject obstacleTop;
-    public GameObject obstacleBottom;
-    private float startDelay = 3f;
-    private float repeatRate = 2f;
-    private float differenceBtwnCenters = 10f;
+    //public GameObject obstacleTop;
+    //public GameObject obstacleBottom;
 
-    public float flyInterval = 3f;
-    private float startBound = 15f;
-    private Vector3 spawnTopPos = new Vector3();
-    private Vector3 spawnBotPos = new Vector3();
+    public GameObject obstaclePrefab;
+
+    private float startDelay = 1f;
+    private float repeatRate = 2f;
+
+    private float startBound = 12f;
+    private Vector2 spawnPos = new Vector2();
 
     // Start is called before the first frame update
     void Start()
@@ -27,15 +27,9 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnObstacle() 
     {
-        spawnTopPos.x = startBound;
-        spawnBotPos.x = startBound;
+        spawnPos.x = startBound;
+        spawnPos.y = Random.Range(-2, 3);
 
-        ///TODO: solve repeating problem
-        
-        spawnTopPos.y = Random.Range(3.0f, 8.0f);
-        spawnBotPos.y = spawnTopPos.y - differenceBtwnCenters - flyInterval;
-
-        Instantiate(obstacleTop, spawnTopPos, Quaternion.identity);
-        Instantiate(obstacleBottom, spawnBotPos, Quaternion.identity);
+        Instantiate(obstaclePrefab, spawnPos, Quaternion.identity);
     }
 }

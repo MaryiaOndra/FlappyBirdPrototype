@@ -150,11 +150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f8eb1aab8737a84dac86cc386e1d1a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleTop: {fileID: 8897200240769337689, guid: d7e061bbe7707e94481743ffcdaaf88c,
+  obstaclePrefab: {fileID: 235172492161836183, guid: afe6e84256480454397db68475b43594,
     type: 3}
-  obstacleBottom: {fileID: 8897200240769337689, guid: 5f6cafeaf40eecc4a829d37049b26ffa,
-    type: 3}
-  flyInterval: 3
 --- !u!4 &208148781
 Transform:
   m_ObjectHideFlags: 0
@@ -265,7 +262,7 @@ GameObject:
   - component: {fileID: 1336193594}
   m_Layer: 8
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -452,9 +449,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1908544898}
   - component: {fileID: 1908544897}
-  - component: {fileID: 1908544900}
   - component: {fileID: 1908544896}
   - component: {fileID: 1908544899}
+  - component: {fileID: 1908544900}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -586,3 +583,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  isOnGround: 0
+  isGameOver: 0
