@@ -3,22 +3,26 @@
 public class MoveLeft : MonoBehaviour
 {
     private float speed = 4.0f;
-    private float lowerBound = -12f;
+    private float leftBound = -12f;
+    private PlayerController playerControllerScript;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.left * Time.deltaTime * speed, Space.World);
-                
-        if (transform.position.x < lowerBound)
+        if (!playerControllerScript.isGameOver)
+        {
+            transform.Translate(Vector2.left * Time.deltaTime * speed, Space.World);
+        }
+
+        if (transform.position.x < leftBound)
         {
             Destroy(gameObject);
-        }
+        }        
     }
 }
