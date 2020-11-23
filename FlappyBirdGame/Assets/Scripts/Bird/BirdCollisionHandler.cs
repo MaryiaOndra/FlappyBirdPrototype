@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Bird))]
 public class BirdCollisionHandler : MonoBehaviour
@@ -12,8 +10,16 @@ public class BirdCollisionHandler : MonoBehaviour
         _bird = GetComponent<Bird>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        _bird.Die();   
+
+        if (collision.TryGetComponent<ScoreZone>(out ScoreZone scoreZone ))
+        {
+            _bird.IcreaseScore();
+        }
+        else
+        {
+            _bird.Die();
+        }
     }
 }
