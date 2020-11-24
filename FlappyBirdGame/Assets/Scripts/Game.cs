@@ -50,6 +50,12 @@ public class Game : MonoBehaviour
     private void OnGameOver() 
     {
         Time.timeScale = 0;
+        _startScreen.Close();
         _gameOverScreen.Open();
+    }
+
+    public void QuitGame() 
+    {
+        Application.Quit(0);
     }
 }

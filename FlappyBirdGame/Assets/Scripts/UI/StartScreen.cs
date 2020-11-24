@@ -23,5 +23,4 @@ public class StartScreen : Screen
     {
         PlayButtonClick?.Invoke();
     }
-
 }
